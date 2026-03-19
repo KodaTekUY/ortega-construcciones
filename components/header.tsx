@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, Phone } from "lucide-react"
+import { Menu, MessageCircle, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Header() {
@@ -25,7 +25,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             <Link href="#servicios" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Servicios
             </Link>
@@ -41,10 +41,15 @@ export function Header() {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-4">
-            <a href="tel:+59899110347" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-              <Phone className="h-4 w-4" />
-              <span>099 110 347</span>
+          <div className="hidden lg:flex items-center gap-4">
+            <a
+              href="https://wa.me/59899110347"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-9 items-center justify-center gap-2 rounded-md bg-[#25D366] px-4 text-sm font-medium text-white transition-colors hover:bg-[#1ebe5a]"
+            >
+              <MessageCircle className="h-4 w-4" />
+              <span className="text-sm hidden lg:block">WhatsApp</span>
             </a>
             <Button
               type="button"
@@ -55,20 +60,31 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Mobile Actions */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <a
+              href="https://wa.me/59899110347"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#25D366] text-white transition-colors hover:bg-[#1ebe5a]"
+              aria-label="Abrir WhatsApp"
+            >
+              <MessageCircle className="h-5 w-5" />
+            </a>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-foreground"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-background border-b border-border">
+        <div className="lg:hidden bg-background border-b border-border">
           <nav className="flex flex-col px-4 py-4 gap-4">
             <Link 
               href="#servicios" 
