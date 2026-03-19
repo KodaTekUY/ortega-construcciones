@@ -8,6 +8,10 @@ export function Hero() {
   const heroRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
 
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
+  }
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -49,29 +53,34 @@ export function Hero() {
       >
         <div className="max-w-2xl">
           <span className="inline-block mb-4 text-accent font-medium tracking-wider uppercase text-sm">
-            Punta del Este | Piriápolis | Maldonado
+            Especializados en Maldonado
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-background leading-tight text-balance mb-6">
-            Tu casa en el Este, construida sin sorpresas
+            Construimos lo que acordamos. Sin sorpresas.
           </h1>
           <p className="text-lg sm:text-xl text-background/90 mb-8 leading-relaxed max-w-xl">
-            Construimos casas y complejos en las mejores zonas costeras de Uruguay.
-            Experiencia local, plazos que se cumplen y gestión completa de permisos.
+            30 años levantando casas en toda la costa este, de Solís a José Ignacio.
+            Presupuesto cerrado, permisos incluidos y sin que tengas que estar encima
+            de la obra para que salga bien.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
+              type="button"
               size="lg" 
               className="bg-accent text-accent-foreground hover:bg-accent/90 text-base px-8 py-6 font-semibold"
+              onClick={() => scrollToSection("contacto")}
             >
-              Solicitar presupuesto gratuito
+              Pedí tu presupuesto
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
+              type="button"
               size="lg" 
               variant="outline" 
               className="border-background/30 text-background bg-transparent hover:bg-background/10 text-base px-8 py-6"
+              onClick={() => scrollToSection("proyectos")}
             >
-              Ver proyectos
+              Ver obras
             </Button>
           </div>
         </div>

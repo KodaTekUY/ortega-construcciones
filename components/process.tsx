@@ -1,38 +1,44 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { MessageCircle, FileText, Clipboard, Hammer, Key } from "lucide-react"
+import { ClipboardCheck, FileText, Hammer, Key, MapPinned, MessageCircle } from "lucide-react"
 
 const steps = [
   {
     icon: MessageCircle,
     number: "01",
-    title: "Consulta inicial",
-    description: "Conversamos sobre tu proyecto, visitamos el terreno y entendemos tus necesidades.",
+    title: "Primera charla",
+    description: "Nos contás qué querés construir. Escuchamos, preguntamos y entendemos bien el proyecto antes de hablar de números.",
+  },
+  {
+    icon: MapPinned,
+    number: "02",
+    title: "Visita al terreno",
+    description: "Vamos a ver el lugar y tomamos nota de todo lo que necesitamos saber para arrancar.",
   },
   {
     icon: FileText,
-    number: "02",
+    number: "03",
     title: "Proyecto y presupuesto",
-    description: "Desarrollamos el diseño arquitectónico y te presentamos un presupuesto detallado sin sorpresas.",
+    description: "Nuestros arquitectos desarrollan los planos y te presentamos un presupuesto cerrado y detallado. Cualquier cambio al plan se cotiza antes de ejecutarse, sin sorpresas.",
   },
   {
-    icon: Clipboard,
-    number: "03",
-    title: "Permisos y planificación",
-    description: "Gestionamos todos los permisos municipales y planificamos cada etapa de la obra.",
+    icon: ClipboardCheck,
+    number: "04",
+    title: "Permisos y trámites",
+    description: "Nos encargamos de todo ante BPS, IDM y el contador. Vos no tenés que mover un dedo.",
   },
   {
     icon: Hammer,
-    number: "04",
+    number: "05",
     title: "Construcción",
-    description: "Ejecutamos la obra con control de calidad constante y reportes de avance periódicos.",
+    description: "Arranca la obra siguiendo el plan acordado. Si estás lejos, te mandamos fotos y actualizaciones para que sepas cómo va en todo momento.",
   },
   {
     icon: Key,
-    number: "05",
+    number: "06",
     title: "Entrega",
-    description: "Entregamos tu casa lista para habitar, con garantía y documentación completa.",
+    description: "Te entregamos la casa lista. Lo que se acordó al principio es lo que recibís al final.",
   },
 ]
 
@@ -68,13 +74,13 @@ export function Process() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block mb-4 text-accent font-medium tracking-wider uppercase text-sm">
-            Cómo trabajamos
+            Proceso
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            Un proceso claro, sin vueltas
+            Cómo trabajamos
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Sabemos que construir genera ansiedad. Por eso te acompañamos en cada paso con comunicación constante.
+            Sin vueltas ni sorpresas, desde el primer contacto hasta que entrás a tu casa.
           </p>
         </div>
 

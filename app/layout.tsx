@@ -16,9 +16,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Ortega Construcciones | Casas y complejos en Punta del Este, Piriápolis y Maldonado',
-  description: 'Construimos casas y complejos en las mejores zonas costeras del Este de Uruguay. Experiencia local, cumplimiento de plazos y gestión completa de permisos.',
-  generator: 'v0.app',
+  title: 'Ortega Construcciones | Construimos lo que acordamos. Sin sorpresas.',
+  description: 'Más de 30 años levantando casas en toda la costa este, de Solís a José Ignacio. Presupuesto cerrado, permisos incluidos y sin que tengas que estar encima de la obra para que salga bien.',
   icons: {
     icon: [
       {

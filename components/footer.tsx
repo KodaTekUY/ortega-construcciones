@@ -1,14 +1,15 @@
 import Link from "next/link"
-import { Phone, Mail, MessageCircle, MapPin } from "lucide-react"
+import { Clock3, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
 
 const zones = [
+  "Solís",
+  "Piriápolis",
   "Punta del Este",
-  "Piriápolis", 
   "Punta Ballena",
-  "José Ignacio",
   "La Barra",
+  "José Ignacio",
   "Maldonado",
-  "Canelones Costa",
+  "Más zonas",
 ]
 
 const links = [
@@ -31,7 +32,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-background/70 text-sm leading-relaxed mb-6">
-              Construimos casas y complejos en las mejores zonas costeras del Este de Uruguay desde hace más de 25 años.
+              Construimos en toda la costa este desde hace más de 30 años.
             </p>
           </div>
 
@@ -77,32 +78,36 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a 
-                  href="https://wa.me/59899123456"
+                  href="https://wa.me/59899110347"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-background/70 hover:text-accent transition-colors text-sm"
                 >
                   <MessageCircle className="h-5 w-5" />
-                  <span>WhatsApp: 099 123 456</span>
+                  <span>WhatsApp: 099 110 347</span>
                 </a>
               </li>
               <li>
                 <a 
-                  href="tel:+59899123456"
+                  href="tel:+59899110347"
                   className="flex items-center gap-3 text-background/70 hover:text-accent transition-colors text-sm"
                 >
                   <Phone className="h-5 w-5" />
-                  <span>Teléfono: 099 123 456</span>
+                  <span>Teléfono: 099 110 347</span>
                 </a>
               </li>
               <li>
                 <a 
-                  href="mailto:ortega@gmail.com"
+                  href="mailto:ortegamorelcarlos@hotmail.com"
                   className="flex items-center gap-3 text-background/70 hover:text-accent transition-colors text-sm"
                 >
                   <Mail className="h-5 w-5" />
-                  <span>ortega@gmail.com</span>
+                  <span>ortegamorelcarlos@hotmail.com</span>
                 </a>
+              </li>
+              <li className="flex items-center gap-3 text-background/70 text-sm">
+                <Clock3 className="h-5 w-5" />
+                <span>Lunes a viernes, 7:00 a 19:00</span>
               </li>
             </ul>
           </div>
@@ -114,14 +119,6 @@ export function Footer() {
             <p className="text-background/50 text-sm">
               © {new Date().getFullYear()} Ortega Construcciones. Todos los derechos reservados.
             </p>
-            <div className="flex items-center gap-6">
-              <a href="#" className="text-background/50 hover:text-accent transition-colors text-sm">
-                Política de privacidad
-              </a>
-              <a href="#" className="text-background/50 hover:text-accent transition-colors text-sm">
-                Términos y condiciones
-              </a>
-            </div>
           </div>
         </div>
       </div>

@@ -5,22 +5,19 @@ import { Quote } from "lucide-react"
 
 const testimonials = [
   {
-    quote: "Vivimos en Buenos Aires y construir desde lejos nos daba mucho miedo. Pero ellos se encargaron de todo: permisos, avances, fotos semanales. Hoy disfrutamos nuestra casa en Punta Ballena cada verano.",
-    author: "Martín y Carolina Fernández",
-    location: "Punta Ballena",
-    initials: "MF",
+    quote: "[Texto del testimonio tal cual lo dijo el cliente]",
+    author: "Nombre y apellido",
+    location: "Zona donde construyó",
   },
   {
-    quote: "Cumplieron los plazos a rajatabla. En un rubro donde los atrasos son moneda corriente, entregar en fecha me sorprendió gratamente. Muy profesionales.",
-    author: "Ricardo Bentancor",
-    location: "Piriápolis",
-    initials: "RB",
+    quote: "[Texto del testimonio tal cual lo dijo el cliente]",
+    author: "Nombre y apellido",
+    location: "Zona donde construyó",
   },
   {
-    quote: "Lo que más valoré fue la transparencia. Presupuesto cerrado, sin sorpresas ni gastos ocultos. Y el resultado final superó mis expectativas. Mi casa quedó espectacular.",
-    author: "Luciana Gómez",
-    location: "José Ignacio",
-    initials: "LG",
+    quote: "[Texto del testimonio tal cual lo dijo el cliente]",
+    author: "Nombre y apellido",
+    location: "Zona donde construyó",
   },
 ]
 
@@ -59,8 +56,11 @@ export function Testimonials() {
             Testimonios
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 text-balance">
-            Lo que dicen nuestros clientes
+            Lo que dicen los que ya construyeron
           </h2>
+          <p className="mx-auto max-w-2xl text-lg text-primary-foreground/70">
+            Esta sección sigue pendiente de completar con testimonios reales.
+          </p>
         </div>
 
         {/* Testimonials Grid */}
@@ -76,14 +76,15 @@ export function Testimonials() {
               style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
             >
               <Quote className="h-10 w-10 text-accent/50 mb-6" strokeWidth={1} />
+              <span className="mb-4 inline-flex rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent">
+                Pendiente de completar
+              </span>
               <blockquote className="text-primary-foreground/90 leading-relaxed mb-8">
                 {`"${testimonial.quote}"`}
               </blockquote>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                  <span className="font-serif text-accent font-bold">
-                    {testimonial.initials}
-                  </span>
+                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">
+                  ?
                 </div>
                 <div>
                   <p className="font-medium text-primary-foreground">

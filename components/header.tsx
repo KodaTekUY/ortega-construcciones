@@ -8,6 +8,11 @@ import { Button } from "@/components/ui/button"
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
+    setIsMenuOpen(false)
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -37,12 +42,16 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="tel:+59899123456" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a href="tel:+59899110347" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <Phone className="h-4 w-4" />
-              <span>099 123 456</span>
+              <span>099 110 347</span>
             </a>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-              Solicitar presupuesto
+            <Button
+              type="button"
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              onClick={() => scrollToSection("contacto")}
+            >
+              Pedí tu presupuesto
             </Button>
           </div>
 
@@ -89,8 +98,12 @@ export function Header() {
             >
               Contacto
             </Link>
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 mt-2">
-              Solicitar presupuesto
+            <Button
+              type="button"
+              className="mt-2 w-full bg-primary text-primary-foreground hover:bg-primary/90"
+              onClick={() => scrollToSection("contacto")}
+            >
+              Pedí tu presupuesto
             </Button>
           </nav>
         </div>

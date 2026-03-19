@@ -1,28 +1,28 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Award, FileCheck, Home, MapPin } from "lucide-react"
+import { Award, Home, MapPin, Ruler } from "lucide-react"
 
 const badges = [
   {
     icon: Award,
-    value: "+25",
-    label: "Años de experiencia",
+    value: "+30 años",
+    label: "Haciendo esto",
   },
   {
     icon: Home,
-    value: "+180",
-    label: "Casas y complejos",
+    value: "+150 casas",
+    label: "Entregadas en tiempo",
   },
   {
-    icon: FileCheck,
-    value: "100%",
-    label: "Gestión de permisos incluida",
+    icon: Ruler,
+    value: "Desde 55 a 1.000 m²",
+    label: "Nos adaptamos a tu proyecto",
   },
   {
     icon: MapPin,
-    value: "Todo",
-    label: "el Este cubierto",
+    value: "Solís a José Ignacio",
+    label: "Toda la costa este cubierta",
   },
 ]
 

@@ -6,14 +6,15 @@ import { Input } from "@/components/ui/input"
 import { MapPin, ArrowRight } from "lucide-react"
 
 const zones = [
-  "Punta del Este",
+  "Solís",
   "Piriápolis",
+  "Punta del Este",
   "Punta Ballena",
-  "José Ignacio",
   "La Barra",
-  "Manantiales",
-  "Maldonado",
-  "Canelones Costa",
+  "José Ignacio",
+  "Maldonado ciudad",
+  "Resto de Maldonado",
+  "Otro Departamento",
 ]
 
 export function CtaSection() {
@@ -52,13 +53,13 @@ export function CtaSection() {
           {/* Left Content */}
           <div>
             <span className="inline-block mb-4 text-accent font-medium tracking-wider uppercase text-sm">
-              Empezá tu proyecto
+              Contacto
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-              ¿Listo para construir tu casa en el Este?
+              Pedí tu presupuesto
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Dejanos tus datos y te contactamos en menos de 24 horas para agendar una visita sin compromiso a tu terreno.
+              Dejanos tus datos y coordinamos una primera charla sobre tu proyecto.
             </p>
             
             {/* Zones */}
@@ -82,9 +83,6 @@ export function CtaSection() {
 
           {/* Right Form */}
           <div className="bg-card rounded-2xl p-8 lg:p-10 shadow-xl border border-border">
-            <h3 className="font-serif text-2xl font-bold text-card-foreground mb-6">
-              Solicitar presupuesto gratuito
-            </h3>
             <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-card-foreground mb-2">
@@ -104,7 +102,7 @@ export function CtaSection() {
                 <Input 
                   id="phone"
                   type="tel" 
-                  placeholder="099 123 456"
+                  placeholder="099 110 347"
                   className="w-full bg-input border-border focus:border-accent"
                 />
               </div>
@@ -122,15 +120,26 @@ export function CtaSection() {
                   ))}
                 </select>
               </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-card-foreground mb-2">
+                  Detalles del proyecto o consulta
+                </label>
+                <textarea 
+                  id="message"
+                  rows={4}
+                  placeholder="Contanos un poco sobre tu proyecto o cualquier consulta que tengas."
+                  className="w-full px-3 py-2 rounded-md bg-input border border-border text-card-foreground focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                />
+              </div>
               <Button 
                 type="submit"
                 className="w-full bg-accent text-accent-foreground hover:bg-accent/90 py-6 text-base font-semibold"
               >
-                Quiero mi presupuesto
+                Pedí tu presupuesto
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <p className="text-xs text-muted-foreground text-center">
-                Sin compromiso. Respuesta en menos de 24 horas.
+                Completá tus datos y te contactamos para seguir la conversación.
               </p>
             </form>
           </div>

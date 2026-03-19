@@ -7,23 +7,23 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const services = [
   {
     icon: Home,
-    title: "Construcción desde cero",
-    description: "Hacemos realidad tu casa soñada. Desde el diseño hasta la entrega de llaves, manejamos todo el proceso con materiales de primera calidad.",
+    title: "Obra nueva",
+    description: "De la reunión inicial a la entrega de llaves. Vos llegás con el terreno y el proyecto, nosotros nos encargamos del resto. Presupuesto cerrado, materiales de primera y seguimiento en cada etapa.",
   },
   {
     icon: Expand,
-    title: "Ampliaciones y refacciones",
-    description: "Transformamos y expandimos tu propiedad existente. Agregamos ambientes, renovamos espacios o modernizamos tu casa de playa.",
+    title: "Ampliaciones",
+    description: "Si tu casa necesita más espacio, lo construimos con el mismo nivel de terminación que el resto de la obra. Sin parches, sin diferencias.",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Gestión de permisos y trámites",
+    description: "Los trámites municipales ante BPS, IDM y la documentación con contador los manejamos nosotros. Conocemos los procesos de la zona y vos no tenés que lidiar con nada de eso.",
   },
   {
     icon: PenTool,
     title: "Proyecto arquitectónico",
-    description: "Diseñamos tu proyecto a medida con arquitectos locales que conocen el terreno, el clima y las normativas del Este.",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Gestión de permisos IDM/IMM",
-    description: "Nos encargamos de toda la tramitación municipal. Conocemos los procesos de Maldonado y Canelones al detalle.",
+    description: "Trabajamos con arquitectos de la zona que conocen el terreno, el clima y las normativas del Este. Si llegás sin planos, arrancamos desde cero con vos.",
   },
 ]
 
@@ -59,14 +59,11 @@ export function Services() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block mb-4 text-accent font-medium tracking-wider uppercase text-sm">
-            Nuestros servicios
+            Servicios
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            Todo lo que necesitás para construir
+            Lo que hacemos
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ofrecemos un servicio integral para que vos solo te preocupes por disfrutar tu nueva casa.
-          </p>
         </div>
 
         {/* Services Grid */}
