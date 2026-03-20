@@ -18,7 +18,7 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex cursor-pointer items-center gap-2 transition-opacity hover:opacity-80">
             <span className="font-serif text-xl font-bold text-foreground tracking-tight">
               Ortega <span className="text-accent">Construcciones</span>
             </span>
@@ -73,7 +73,7 @@ export function Header() {
             </a>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-foreground"
+              className="cursor-pointer rounded-md p-2 text-foreground transition-colors hover:bg-secondary/80"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

@@ -26,7 +26,7 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-6">
+            <Link href="/" className="mb-6 inline-block cursor-pointer transition-opacity hover:opacity-80">
               <span className="font-serif text-xl font-bold text-background tracking-tight">
                 Ortega <span className="text-accent">Construcciones</span>
               </span>
