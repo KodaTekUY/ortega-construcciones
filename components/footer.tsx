@@ -28,19 +28,19 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="mb-6 cursor-pointer transition-opacity hover:opacity-80 flex flex-row w-max content-center items-center">
+            <Link href="/" className="mb-4 cursor-pointer transition-opacity hover:opacity-80 flex flex-col w-max content-center items-center">
               <Image
                 src="/dark-background-logo.svg"
                 alt="Ortega Construcciones"
                 width={220}
                 height={52}
                 priority
-                className="h-10 w-auto"
+                className="h-16 w-auto mb-2"
               />
-              <h1 className="border-l-2 border-white ml-2 pl-2 text-xl font-bold text-foreground flex flex-col gap-0 leading-none py-1">
-                <span className={`${notoSerifGeorgian.className} text-ring font-bold tracking-wide`}>ORTEGA</span>
+              <h1 className="border-t-2 border-[#c4a54b] text-xl font-bold text-foreground flex flex-col gap-0 leading-none p-2">
+                <span className={`${notoSerifGeorgian.className} text-white font-bold tracking-wide`}>ORTEGA</span>
                 <span
-                  className={`${notoSerifGeorgian.className} text-white text-[.64rem] font-light`}
+                  className={`${notoSerifGeorgian.className} text-[#c4a54b] text-[.64rem] font-light`}
                   style={{ fontStyle: "italic" }}
                 >
                   CONSTRUCCIONES
