@@ -1,5 +1,7 @@
+import Image from "next/image"
 import Link from "next/link"
 import { Clock3, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
+import { notoSerifGeorgian } from "./ui/fonts"
 
 const zones = [
   "Solís",
@@ -21,15 +23,29 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="bg-foreground text-background py-16 lg:py-20">
+    <footer className="bg-black text-background py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="mb-6 inline-block cursor-pointer transition-opacity hover:opacity-80">
-              <span className="font-serif text-xl font-bold text-background tracking-tight">
-                Ortega <span className="text-accent">Construcciones</span>
-              </span>
+            <Link href="/" className="mb-6 cursor-pointer transition-opacity hover:opacity-80 flex flex-row w-max content-center items-center">
+              <Image
+                src="/dark-background-logo.svg"
+                alt="Ortega Construcciones"
+                width={220}
+                height={52}
+                priority
+                className="h-10 w-auto"
+              />
+              <h1 className="border-l-2 border-white ml-2 pl-2 text-xl font-bold text-foreground flex flex-col gap-0 leading-none py-1">
+                <span className={`${notoSerifGeorgian.className} text-ring font-bold tracking-wide`}>ORTEGA</span>
+                <span
+                  className={`${notoSerifGeorgian.className} text-white text-[.64rem] font-light`}
+                  style={{ fontStyle: "italic" }}
+                >
+                  CONSTRUCCIONES
+                </span>
+              </h1>
             </Link>
             <p className="text-background/70 text-sm leading-relaxed mb-6">
               Construimos en toda la costa este desde hace más de 30 años.
@@ -83,7 +99,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-background/70 hover:text-accent transition-colors text-sm"
                 >
-                  <MessageCircle className="h-5 w-5" />
+                  <MessageCircle className="h-5 w-5 text-accent" />
                   <span>WhatsApp: 099 110 347</span>
                 </a>
               </li>
@@ -92,7 +108,7 @@ export function Footer() {
                   href="tel:+59899110347"
                   className="flex items-center gap-3 text-background/70 hover:text-accent transition-colors text-sm"
                 >
-                  <Phone className="h-5 w-5" />
+                  <Phone className="h-5 w-5 text-accent" />
                   <span>Teléfono: 099 110 347</span>
                 </a>
               </li>
@@ -101,12 +117,12 @@ export function Footer() {
                   href="mailto:ortegamorelcarlos@hotmail.com"
                   className="flex items-center gap-3 text-background/70 hover:text-accent transition-colors text-sm"
                 >
-                  <Mail className="h-5 w-5" />
+                  <Mail className="h-5 w-5 text-accent" />
                   <span>ortegamorelcarlos@hotmail.com</span>
                 </a>
               </li>
               <li className="flex items-center gap-3 text-background/70 text-sm">
-                <Clock3 className="h-5 w-5" />
+                <Clock3 className="h-5 w-5 text-accent" />
                 <span>Lunes a viernes, 7:00 a 19:00</span>
               </li>
             </ul>

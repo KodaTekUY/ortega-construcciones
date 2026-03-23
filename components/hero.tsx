@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 export function Hero() {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -34,15 +35,15 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16">
-      {/* Background Image */}
-      <div 
+      <Image 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop')`,
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/60 to-foreground/40" />
-      </div>
+        src="/1-carlos.png"
+        alt="Casa en las sierras de Maldonado"
+        fill
+        objectFit="cover"
+        priority
+      />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 to-foreground/60" />
 
       {/* Content */}
       <div 
@@ -52,9 +53,6 @@ export function Hero() {
         }`}
       >
         <div className="max-w-2xl">
-          <span className="inline-block mb-4 text-accent font-medium tracking-wider uppercase text-sm">
-            Especializados en Maldonado
-          </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-background leading-tight text-balance mb-6">
             Construimos lo que acordamos. Sin sorpresas.
           </h1>

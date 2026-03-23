@@ -65,11 +65,11 @@ export function TrustBadges() {
               }`}
               style={{ transitionDelay: isVisible ? `${index * 100}ms` : "0ms" }}
             >
-              <badge.icon className="h-10 w-10 text-accent mb-4" strokeWidth={1.5} />
-              <span className="font-serif text-3xl lg:text-4xl font-bold text-primary-foreground mb-2">
+              <badge.icon className="h-10 w-10 text-primary-foreground mb-4" strokeWidth={1.5} />
+              <span className="font-serif text-3xl lg:text-4xl font-bold text-primary-foreground/80 mb-2">
                 {badge.value}
               </span>
-              <span className="text-sm text-primary-foreground/80 uppercase tracking-wider">
+              <span className="text-sm text-primary-foreground/50 uppercase tracking-wider">
                 {badge.label}
               </span>
             </div>

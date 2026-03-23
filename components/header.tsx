@@ -1,9 +1,11 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { Menu, MessageCircle, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { notoSerifGeorgian } from "./ui/fonts"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -15,13 +17,27 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex cursor-pointer items-center gap-2 transition-opacity hover:opacity-80">
-            <span className="font-serif text-xl font-bold text-foreground tracking-tight">
-              Ortega <span className="text-accent">Construcciones</span>
-            </span>
+          <Link href="/" className="flex cursor-pointer items-center transition-opacity hover:opacity-80">
+            <Image
+              src="/white-background-logo.svg"
+              alt="Ortega Construcciones"
+              width={220}
+              height={52}
+              priority
+              className="h-10 w-auto"
+            />
+            <h1 className="border-l-2 border-primary ml-2 pl-2 text-xl font-bold text-foreground flex flex-col gap-0 leading-none py-1">
+              <span className={`${notoSerifGeorgian.className} text-ring font-bold tracking-wide`}>ORTEGA</span>
+              <span
+                className={`${notoSerifGeorgian.className} text-primary text-[.64rem] font-light`}
+                style={{ fontStyle: "italic" }}
+              >
+                CONSTRUCCIONES
+              </span>
+            </h1>
           </Link>
 
           {/* Desktop Navigation */}
@@ -46,7 +62,7 @@ export function Header() {
               href="https://wa.me/59899110347"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-9 items-center justify-center gap-2 rounded-md bg-[#25D366] px-4 text-sm font-medium text-white transition-colors hover:bg-[#1ebe5a]"
+              className="inline-flex h-9 items-center justify-center gap-2 rounded-md bg-ring px-4 text-sm font-medium text-white transition-colors hover:bg-[#1ebe5a]"
             >
               <MessageCircle className="h-4 w-4" />
               <span className="text-sm hidden lg:block">WhatsApp</span>

@@ -52,9 +52,6 @@ export function Testimonials() {
       >
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block mb-4 text-accent font-medium tracking-wider uppercase text-sm">
-            Testimonios
-          </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 text-balance">
             Lo que dicen los que ya construyeron
           </h2>
@@ -75,15 +72,15 @@ export function Testimonials() {
               }`}
               style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
             >
-              <Quote className="h-10 w-10 text-accent/50 mb-6" strokeWidth={1} />
-              <span className="mb-4 inline-flex rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent">
+              <Quote className="h-10 w-10 text-primary-foreground/50 mb-6" strokeWidth={1} />
+              <span className="mb-4 inline-flex rounded-full bg-primary-foreground/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary-foreground/70">
                 Pendiente de completar
               </span>
               <blockquote className="text-primary-foreground/90 leading-relaxed mb-8">
                 {`"${testimonial.quote}"`}
               </blockquote>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">
+                <div className="w-12 h-12 rounded-full bg-primary-foreground/20 flex items-center justify-center text-primary-foreground font-bold">
                   ?
                 </div>
                 <div>

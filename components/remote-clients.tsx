@@ -5,9 +5,6 @@ export function RemoteClients() {
     <section className="bg-secondary py-20 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8">
         <div>
-          <span className="mb-4 inline-block text-sm font-medium uppercase tracking-wider text-accent">
-            Clientes del exterior
-          </span>
           <h2 className="mb-6 font-serif text-3xl font-bold text-foreground text-balance sm:text-4xl lg:text-5xl">
             ¿Estás en Argentina o en otro país? Ya lo hicimos antes.
           </h2>

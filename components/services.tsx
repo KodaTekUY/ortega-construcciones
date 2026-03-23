@@ -58,9 +58,6 @@ export function Services() {
       >
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block mb-4 text-accent font-medium tracking-wider uppercase text-sm">
-            Servicios
-          </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
             Lo que hacemos
           </h2>

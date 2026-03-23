@@ -52,9 +52,6 @@ export function CtaSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <div>
-            <span className="inline-block mb-4 text-accent font-medium tracking-wider uppercase text-sm">
-              Contacto
-            </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
               Pedí tu presupuesto
             </h2>

@@ -41,9 +41,6 @@ export function Projects() {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16">
           <div>
-            <span className="inline-block mb-4 text-accent font-medium tracking-wider uppercase text-sm">
-              Proyectos
-            </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance">
               Obras que hicimos
             </h2>
