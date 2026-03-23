@@ -28,7 +28,10 @@ export function Header() {
               height={52}
               priority
               className="h-10 w-auto"
-            />
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
             <h1 className="ml-2 flex flex-col gap-0 border-l-2 border-[#c4a54b] py-1 pl-2 text-xl font-bold leading-none text-background">
               <span className={`${notoSerifGeorgian.className} antialiased font-bold tracking-wide text-white`}>ORTEGA</span>
               <span
@@ -97,7 +100,6 @@ export function Header() {
           </div>
         </div>
       </div>
-
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="border-b border-background/10 bg-primary lg:hidden">
@@ -141,5 +143,5 @@ export function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }

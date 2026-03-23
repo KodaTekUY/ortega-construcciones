@@ -35,16 +35,18 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16">
-      <Image 
+      <Image
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         src="/1-carlos.png"
         alt="Casa en las sierras de Maldonado"
         fill
-        objectFit="cover"
         priority
-      />
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 to-foreground/60" />
-
+        style={{
+          maxWidth: "100%",
+          height: "auto",
+          objectFit: "cover"
+        }} />
+      <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 to-foreground/60" />
       {/* Content */}
       <div 
         ref={heroRef}
@@ -84,5 +86,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

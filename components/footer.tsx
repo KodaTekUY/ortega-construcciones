@@ -36,7 +36,10 @@ export function Footer() {
                 height={52}
                 priority
                 className="h-16 w-auto mb-2"
-              />
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
               <h1 className="border-t-2 border-[#c4a54b] text-xl font-bold text-foreground flex flex-col gap-0 leading-none p-2">
                 <span className={`${notoSerifGeorgian.className} text-white font-bold tracking-wide`}>ORTEGA</span>
                 <span
@@ -139,5 +142,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
