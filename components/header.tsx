@@ -22,7 +22,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex cursor-pointer items-center transition-opacity hover:opacity-80">
             <Image
-              src="/872223-background-logo.svg"
+              src="/light-background-logo.svg"
               alt="Ortega Construcciones"
               width={220}
               height={52}
