@@ -28,7 +28,7 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="mb-4 cursor-pointer transition-opacity hover:opacity-80 flex flex-col w-max content-center items-center">
+            <Link href="/#hero" className="mb-4 cursor-pointer transition-opacity hover:opacity-80 flex flex-col w-max content-center items-center">
               <Image
                 src="/dark-background-logo.svg"
                 alt="Ortega Construcciones"
@@ -36,10 +36,7 @@ export function Footer() {
                 height={52}
                 priority
                 className="h-16 w-auto mb-2"
-                style={{
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
+              />
               <h1 className="border-t-2 border-[#c4a54b] text-xl font-bold text-foreground flex flex-col gap-0 leading-none p-2">
                 <span className={`${notoSerifGeorgian.className} text-white font-bold tracking-wide`}>ORTEGA</span>
                 <span

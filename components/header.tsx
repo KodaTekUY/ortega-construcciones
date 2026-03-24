@@ -20,7 +20,7 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex cursor-pointer items-center transition-opacity hover:opacity-80">
+          <Link href="/" className="flex cursor-pointer items-center transition-opacity hover:opacity-80" aria-label="Ortega Construcciones" onClick={() => scrollToSection("hero")}>
             <Image
               src="/light-background-logo.svg"
               alt="Ortega Construcciones"
@@ -28,10 +28,7 @@ export function Header() {
               height={52}
               priority
               className="h-10 w-auto"
-              style={{
-                maxWidth: "100%",
-                height: "auto"
-              }} />
+            />
             <h1 className="ml-2 flex flex-col gap-0 border-l-2 border-[#c4a54b] py-1 pl-2 text-xl font-bold leading-none text-background">
               <span className={`${notoSerifGeorgian.className} antialiased font-bold tracking-wide text-white`}>ORTEGA</span>
               <span
