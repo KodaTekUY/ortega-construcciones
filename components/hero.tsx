@@ -37,7 +37,7 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center pt-16" id="hero">
       <Image
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        src="/1-carlos.png"
+        src="/5/1.webp"
         alt="Casa en las sierras de Maldonado"
         fill
         priority

@@ -1,4 +1,5 @@
-import { ArrowRight, Globe2 } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 export function RemoteClients() {
   return (
@@ -26,12 +27,17 @@ export function RemoteClients() {
         </div>
 
         <div className="rounded-3xl border border-accent/20 bg-background p-8 shadow-xl lg:p-10">
-          <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
-            <Globe2 className="h-8 w-8" strokeWidth={1.5} />
+          <div className="mb-6 flex gap-6 items-end justify-between w-full">
+            <h3 className="mb-4 font-serif text-2xl font-bold text-card-foreground">
+              Seguimiento claro, aunque estés lejos
+            </h3>
+            <Image
+              src="/de-uy-al-mundo.svg"
+              alt="De Uruguay al Mundo"
+              width={92}
+              height={92}
+            />
           </div>
-          <h3 className="mb-4 font-serif text-2xl font-bold text-card-foreground">
-            Seguimiento claro, aunque estés lejos
-          </h3>
           <p className="mb-8 text-base leading-relaxed text-muted-foreground">
             La obra puede avanzar con reportes, fotos y comunicación constante,
             sin que tengas que estar viajando para controlar cada paso.

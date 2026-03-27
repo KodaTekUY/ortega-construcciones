@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
+import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
+import { siteUrl } from '@/lib/seo'
 import './globals.css'
 
 const playfair = Playfair_Display({ 
@@ -20,10 +22,16 @@ const siteTitle = 'Ortega Construcciones | Constructora en Maldonado y toda la c
 const siteDescription =
   'Constructora en Maldonado con más de 30 años de experiencia. Obra nueva, ampliaciones, gestión de permisos y proyecto arquitectónico en Punta del Este, Piriápolis, Punta Ballena, La Barra, José Ignacio y toda la costa este.'
 
-const siteUrl = 'https://carlos-ortega.vercel.app'
+const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
 
 const metadataBase = siteUrl ? new URL(siteUrl) : undefined
-const socialImage = metadataBase ? new URL('/1-carlos.png', metadataBase).toString() : undefined
+const socialImage = metadataBase ? new URL('/5-1.png', metadataBase).toString() : undefined
+
+let phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER!.replaceAll(/\D/g, '').trim()
+if (phoneNumber.startsWith('0')) phoneNumber = phoneNumber.substring(1)
+
+const telephone =  '+' + process.env.NEXT_PUBLIC_PHONE_NUMBER_EXTENSION! + phoneNumber
+const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL!
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
@@ -31,8 +39,8 @@ const organizationJsonLd = {
   name: siteName,
   description: siteDescription,
   ...(siteUrl ? { url: siteUrl } : {}),
-  telephone: '+59899110347',
-  email: 'ortegamorelcarlos@hotmail.com',
+  telephone,
+  email,
   areaServed: [
     'Solís',
     'Piriápolis',
@@ -41,6 +49,10 @@ const organizationJsonLd = {
     'La Barra',
     'José Ignacio',
     'Maldonado',
+    'Costa Este de Uruguay',
+    'Uruguay',
+    'Rocha',
+    'Canelones'
   ],
   address: {
     '@type': 'PostalAddress',
@@ -64,6 +76,7 @@ export const metadata: Metadata = {
     'gestión de permisos de obra',
     'constructora en la costa este',
     'Ortega Construcciones',
+
   ],
   authors: [{ name: siteName }],
   creator: siteName,
@@ -126,7 +139,7 @@ export const metadata: Metadata = {
         type: 'image/svg+xml',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/light-background-logo.svg',
   },
 }
 
@@ -138,6 +151,23 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${playfair.variable} ${inter.variable}`}>
       <body className="font-sans antialiased">
+        {googleAdsId ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-ads" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = window.gtag || gtag;
+                gtag('js', new Date());
+                gtag('config', '${googleAdsId}');
+              `}
+            </Script>
+          </>
+        ) : null}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

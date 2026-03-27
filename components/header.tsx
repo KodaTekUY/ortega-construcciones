@@ -6,6 +6,12 @@ import Link from "next/link"
 import { Menu, MessageCircle, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { notoSerifGeorgian } from "./ui/fonts"
+import { TrackedWhatsAppLink } from "./tracked-whatsapp-link"
+
+let phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER!.replaceAll(/\D/g, '').trim()
+if (phoneNumber.startsWith('0')) phoneNumber = phoneNumber.substring(1)
+
+const telephone =  process.env.NEXT_PUBLIC_PHONE_NUMBER_EXTENSION! + phoneNumber
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -58,15 +64,15 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <a
-              href="https://wa.me/59899110347"
+            <TrackedWhatsAppLink
+              href={`https://wa.me/${telephone}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-9 items-center justify-center gap-2 rounded-md bg-[#25D366] px-4 text-sm font-medium text-white transition-colors hover:bg-[#1ebe5a]"
             >
               <MessageCircle className="h-4 w-4" />
               <span className="text-sm hidden lg:block">WhatsApp</span>
-            </a>
+            </TrackedWhatsAppLink>
             <Button
               type="button"
               className="bg-background text-primary hover:bg-background/90"
@@ -78,15 +84,15 @@ export function Header() {
 
           {/* Mobile Actions */}
           <div className="flex items-center gap-2 lg:hidden">
-            <a
-              href="https://wa.me/59899110347"
+            <TrackedWhatsAppLink
+              href={`https://wa.me/${telephone}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#25D366] text-white transition-colors hover:bg-[#1ebe5a]"
               aria-label="Abrir WhatsApp"
             >
               <MessageCircle className="h-5 w-5" />
-            </a>
+            </TrackedWhatsAppLink>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="cursor-pointer rounded-md p-2 text-background transition-colors hover:bg-background/10"

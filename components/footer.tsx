@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Clock3, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
 import { notoSerifGeorgian } from "./ui/fonts"
+import { TrackedWhatsAppLink } from "./tracked-whatsapp-link"
 
 const zones = [
   "Solís",
@@ -21,11 +22,21 @@ const links = [
   { label: "Contacto", href: "#contacto" },
 ]
 
+const rawPhoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER!
+
+let phoneNumber = rawPhoneNumber!.replaceAll(/\D/g, '').trim()
+if (phoneNumber.startsWith('0')) phoneNumber = phoneNumber.substring(1)
+
+const telephone =  '+' + process.env.NEXT_PUBLIC_PHONE_NUMBER_EXTENSION! + phoneNumber
+
+const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL!
+const availableTime = process.env.NEXT_PUBLIC_AV_TIME!
+
 export function Footer() {
   return (
     <footer className="bg-black text-background py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 xl:gap-0 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/#hero" className="mb-4 cursor-pointer transition-opacity hover:opacity-80 flex flex-col w-max content-center items-center">
@@ -60,7 +71,7 @@ export function Footer() {
             <ul className="space-y-3">
               {links.map((link, index) => (
                 <li key={index}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-background/70 hover:text-accent transition-colors text-sm"
                   >
@@ -93,37 +104,37 @@ export function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
-                <a 
-                  href="https://wa.me/59899110347"
+                <TrackedWhatsAppLink
+                  href={`https://wa.me/${telephone.replace('+', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-background/70 hover:text-accent transition-colors text-sm"
                 >
-                  <MessageCircle className="h-5 w-5 text-accent" />
-                  <span>WhatsApp: 099 110 347</span>
+                  <MessageCircle className="h-5 w-5 min-w-5 text-accent" />
+                  <span>WhatsApp: {rawPhoneNumber}</span>
+                </TrackedWhatsAppLink>
+              </li>
+              <li>
+                <a
+                  href={`tel:${telephone}`}
+                  className="flex items-center gap-3 text-background/70 hover:text-accent transition-colors text-sm"
+                >
+                  <Phone className="h-5 w-5 min-w-5 text-accent" />
+                  <span>Teléfono: {rawPhoneNumber}</span>
                 </a>
               </li>
               <li>
-                <a 
-                  href="tel:+59899110347"
-                  className="flex items-center gap-3 text-background/70 hover:text-accent transition-colors text-sm"
+                <a
+                  href={`mailto:${contactEmail}`}
+                  className="flex items-center gap-3 text-background/70 hover:text-accent transition-colors text-sm break-all"
                 >
-                  <Phone className="h-5 w-5 text-accent" />
-                  <span>Teléfono: 099 110 347</span>
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="mailto:ortegamorelcarlos@hotmail.com"
-                  className="flex items-center gap-3 text-background/70 hover:text-accent transition-colors text-sm"
-                >
-                  <Mail className="h-5 w-5 text-accent" />
-                  <span>ortegamorelcarlos@hotmail.com</span>
+                  <Mail className="h-5 w-5 min-w-5 text-accent" />
+                  <span>{contactEmail}</span>
                 </a>
               </li>
               <li className="flex items-center gap-3 text-background/70 text-sm">
-                <Clock3 className="h-5 w-5 text-accent" />
-                <span>Lunes a viernes, 7:00 a 19:00</span>
+                <Clock3 className="h-5 w-5 min-w-5 text-accent" />
+                <span>{availableTime}</span>
               </li>
             </ul>
           </div>
@@ -135,6 +146,25 @@ export function Footer() {
             <p className="text-background/50 text-sm">
               © {new Date().getFullYear()} Ortega Construcciones. Todos los derechos reservados.
             </p>
+            <a
+              className="flex items-center gap-2 group"
+              href="https://kodatekuy.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/kodatek.webp"
+                alt="KodaTek"
+                width={24}
+                height={24}
+              />
+              <span className="text-background/50 text-sm">
+                Desarrollado por{" "}
+                <p className="text-background/70 group-hover:text-accent transition-colors inline">
+                  KodaTek
+                </p>
+              </span>
+            </a>
           </div>
         </div>
       </div>

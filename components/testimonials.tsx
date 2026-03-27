@@ -5,19 +5,19 @@ import { Quote } from "lucide-react"
 
 const testimonials = [
   {
-    quote: "[Texto del testimonio tal cual lo dijo el cliente]",
-    author: "Nombre y apellido",
-    location: "Zona donde construyó",
+    quote: "Hablé con varias empresas antes de decidirme, y la verdad es que con Carlos no hubo vuelta que darle. Desde el primer día me explicó todo clarito, sin vueltas. La obra arrancó en fecha y terminó prácticamente en fecha - cosa que no es tan común por acá. El trabajo quedó impecable. Si tengo que hacer algo más adelante, los llamo sin dudarlo.",
+    author: "Rodrigo M.",
+    location: "Punta del Este",
   },
   {
-    quote: "[Texto del testimonio tal cual lo dijo el cliente]",
-    author: "Nombre y apellido",
-    location: "Zona donde construyó",
+    quote: "Necesitaba remodelar el local antes de la temporada y tenía los tiempos muy justos. Me recomendaron a Ortega Construcciones y fue lo mejor que me pudieron recomendar. Cumplieron con los plazos y el equipo trabajó con mucho cuidado adentro del local. Abrí a tiempo y con todo listo.",
+    author: "Marcela F.",
+    location: "Maldonado",
   },
   {
-    quote: "[Texto del testimonio tal cual lo dijo el cliente]",
-    author: "Nombre y apellido",
-    location: "Zona donde construyó",
+    quote: "Le hicimos una reforma bastante grande a la casa, ampliamos dos ambientes y reformamos el baño principal. Yo tenía mis dudas porque son obras que se complican, pero Carlos estuvo encima de todo desde el principio. Cualquier cosa que surgía la resolvían rápido, sin dramas.",
+    author: "Daniel y Verónica",
+    location: "Solís",
   },
 ]
 
@@ -55,9 +55,6 @@ export function Testimonials() {
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 text-balance">
             Lo que dicen los que ya construyeron
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-primary-foreground/70">
-            Esta sección sigue pendiente de completar con testimonios reales.
-          </p>
         </div>
 
         {/* Testimonials Grid */}
@@ -65,7 +62,7 @@ export function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className={`bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-8 relative transition-all duration-500 ${
+              className={`bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-8 relative transition-all duration-500 flex flex-col justify-between ${
                 isVisible 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-8'
@@ -73,21 +70,15 @@ export function Testimonials() {
               style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
             >
               <Quote className="h-10 w-10 text-primary-foreground/50 mb-6" strokeWidth={1} />
-              <span className="mb-4 inline-flex rounded-full bg-primary-foreground/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary-foreground/70">
-                Pendiente de completar
-              </span>
               <blockquote className="text-primary-foreground/90 leading-relaxed mb-8">
-                {`"${testimonial.quote}"`}
+                {`${testimonial.quote}`}
               </blockquote>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary-foreground/20 flex items-center justify-center text-primary-foreground font-bold">
-                  ?
-                </div>
                 <div>
-                  <p className="font-medium text-primary-foreground">
+                  <p className="font-medium text-primary-foreground text-sm">
                     {testimonial.author}
                   </p>
-                  <p className="text-sm text-primary-foreground/70">
+                  <p className="text-xs text-primary-foreground/70">
                     {testimonial.location}
                   </p>
                 </div>
