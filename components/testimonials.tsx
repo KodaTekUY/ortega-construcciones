@@ -5,7 +5,7 @@ import { Quote } from "lucide-react"
 
 const testimonials = [
   {
-    quote: "Hablé con varias empresas antes de decidirme, y la verdad es que con Carlos no hubo vuelta que darle. Desde el primer día me explicó todo clarito, sin vueltas. La obra arrancó en fecha y terminó prácticamente en fecha - cosa que no es tan común por acá. El trabajo quedó impecable. Si tengo que hacer algo más adelante, los llamo sin dudarlo.",
+    quote: "Hablé con varias empresas antes de decidirme, y la verdad es que con Carlos no hubo vuelta que darle. Desde el primer día me explicó todo clarito, sin vueltas. La obra arrancó y terminó en fecha, cosa que no es tan común por acá. El trabajo quedó impecable. Si tengo que hacer algo más adelante, los llamo sin dudarlo.",
     author: "Rodrigo M.",
     location: "Punta del Este",
   },
