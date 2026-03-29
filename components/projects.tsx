@@ -37,20 +37,12 @@ const projects: Project[] = [
       "Complejo de viviendas de líneas rectas, fachadas blancas y detalles en piedra, implantado en un terreno amplio con visuales abiertas.",
     photos: [
       {
-        src: "/2/1.webp",
-        description: "Panorámica del conjunto de dúplex blancos en obra avanzada, con balcones metálicos y circulaciones exteriores.",
-      },
-      {
         src: "/2/2.webp",
         description: "Frente de unidad terminada con fachada blanca, paño central revestido en piedra y balcón corrido en planta alta.",
       },
       {
         src: "/2/3.webp",
         description: "Vista lateral del conjunto con dos bloques terminados y el mar al fondo, mostrando implantación y acceso vehicular.",
-      },
-      {
-        src: "/2/4.webp",
-        description: "Perspectiva posterior de varias unidades con terrazas, grandes aberturas y patio en desarrollo.",
       },
     ],
   },
