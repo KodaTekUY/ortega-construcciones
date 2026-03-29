@@ -25,7 +25,6 @@ const siteDescription =
 const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
 
 const metadataBase = siteUrl ? new URL(siteUrl) : undefined
-const socialImage = metadataBase ? new URL('/5-1.png', metadataBase).toString() : undefined
 
 let phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER!.replaceAll(/\D/g, '').trim()
 if (phoneNumber.startsWith('0')) phoneNumber = phoneNumber.substring(1)
@@ -96,22 +95,11 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
     ...(siteUrl ? { url: siteUrl } : {}),
-    ...(socialImage
-      ? {
-          images: [
-            {
-              url: socialImage,
-              alt: 'Ortega Construcciones - obra residencial en Maldonado',
-            },
-          ],
-        }
-      : {}),
   },
   twitter: {
     card: 'summary_large_image',
     title: siteTitle,
     description: siteDescription,
-    ...(socialImage ? { images: [socialImage] } : {}),
   },
   robots: {
     index: true,
